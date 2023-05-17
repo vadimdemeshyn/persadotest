@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Amazon-Test-Suite">
+
+	<parameter name="rcHost" value="localhost" />
+	<parameter name="rcPort" value="4444" />
+	<parameter name="targetHostUrl" value="https://www.amazon.com/" />
+	<parameter name="debugging" value="true" />
+	<parameter name="browser" value="chrome" />
+	<parameter name="profile" value="" />
+	<parameter name="driverType" value="webdriver" />
+	<parameter name="actionsLogging" value="true" />
+	<parameter name="tests.takeScreenshot" value="true" />
+	<parameter name="suite.init.context" value="false"/>
+	<parameter name="waitForElement.Timeout" value="200"/>
+
+	<listeners>
+		<listener class-name="com.persado.oss.quality.stevia.selenium.listeners.TestListener" />
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	</listeners>
+
+
+	<test name="Test Amazon" preserve-order="true">
+        <classes>
+			<class name="com.amazon.tests.AmazonTest" />
+		</classes>
+	</test>
+</suite>
